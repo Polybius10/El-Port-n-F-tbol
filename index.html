@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="El Portón Fútbol — Complejo de fútbol en San Miguel, Buenos Aires. 3 canchas de fútbol 5 y cancha de fútbol 8. Reservas por WhatsApp." />
+  <title>El Portón Fútbol</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ===================== NAV ===================== -->
+  <header class="site-nav" role="banner">
+    <div class="nav-inner">
+      <a href="#inicio" class="nav-logo" aria-label="El Portón Fútbol — inicio">
+        <span class="nav-logo-text">El Portón Fútbol</span>
+        <span class="badge-open" aria-label="Complejo abierto">Abierto</span>
+      </a>
+      <ul class="nav-links" role="list">
+        <li><a href="#canchas">Canchas</a></li>
+        <li><a href="#precios">Precios</a></li>
+        <li><a href="#promocion">Promoción</a></li>
+        <li><a href="#horarios">Horarios</a></li>
+        <li><a href="#servicios">Servicios</a></li>
+        <li><a href="#ubicacion">Ubicación</a></li>
+      </ul>
+      <a href="https://wa.me/5491136969150?text=Hola!%20Quiero%20reservar%20una%20cancha%20en%20El%20Port%C3%B3n%20F%C3%BAtbol" target="_blank" rel="noopener" class="btn-wa hidden md:inline-flex" style="font-size:13px; padding:9px 16px;">
+        <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Reservar
+      </a>
+      <button id="burger" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-menu" class="md:hidden p-2" onclick="toggleMenu()" style="background:none; border:none; cursor:pointer;">
+        <svg width="22" height="22" fill="none" stroke="rgba(232,245,236,0.7)" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+    </div>
+    <div class="mobile-menu" id="mobile-menu" role="dialog" aria-label="Menú de navegación">
+      <nav>
+        <a href="#canchas" onclick="toggleMenu()">Canchas</a>
+        <a href="#precios" onclick="toggleMenu()">Precios</a>
+        <a href="#promocion" onclick="toggleMenu()">Promoción escolar</a>
+        <a href="#horarios" onclick="toggleMenu()">Horarios</a>
+        <a href="#servicios" onclick="toggleMenu()">Servicios</a>
+        <a href="#ubicacion" onclick="toggleMenu()">Ubicación</a>
+        <a href="https://wa.me/5491136969150?text=Hola!%20Quiero%20reservar%20en%20El%20Port%C3%B3n%20F%C3%BAtbol" target="_blank" rel="noopener" class="btn-wa" style="justify-content:center; margin-top:8px;">
+          <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Reservar por WhatsApp
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ===================== HERO ===================== -->
+    <section id="inicio" class="hero" aria-label="Bienvenida">
+      <div class="hero-glow" aria-hidden="true"></div>
+      <div class="hero-circle-1" aria-hidden="true"></div>
+      <div class="hero-circle-2" aria-hidden="true"></div>
+
+      <div class="container" style="position:relative; z-index:1;">
+        <div style="max-width: 580px;">
+          <p class="section-tag fade-up">Fútbol 5 · Fútbol 8 · San Miguel</p>
+
+          <h1 class="fade-up" style="font-size: clamp(62px, 13vw, 108px); line-height: 0.92; color: #fff; margin-bottom: 10px; transition-delay:0.08s;">
+            EL<br><span style="color: var(--green);">PORTÓN</span><br>FÚTBOL
+          </h1>
+
+          <p class="fade-up" style="font-size:16px; color:rgba(232,245,236,0.48); line-height:1.75; margin-bottom:32px; max-width:400px; font-weight:300; transition-delay:0.16s;">
+            3 canchas de fútbol 5 y cancha de fútbol 8 con césped sintético. Reservas rápidas por WhatsApp, sin formularios.
+          </p>
+
+          <div class="fade-up" style="display:flex; flex-wrap:wrap; gap:12px; transition-delay:0.24s;">
+            <a href="https://wa.me/5491136969150?text=Hola!%20Quiero%20reservar%20una%20cancha%20en%20El%20Port%C3%B3n%20F%C3%BAtbol" target="_blank" rel="noopener" class="btn-wa" style="font-size:15px; padding:14px 28px;">
+              <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              Reservar ahora
+            </a>
+            <a href="#canchas" class="btn-outline">Ver canchas →</a>
+          </div>
+        </div>
+
+        <!-- Stats strip -->
+        <div class="fade-up" style="display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:rgba(34,197,94,0.08); border:1px solid rgba(34,197,94,0.1); border-radius:4px; overflow:hidden; margin-top:60px; max-width:600px; transition-delay:0.32s;" role="list" aria-label="Datos del complejo">
+          <div style="background:var(--dark); padding:18px 14px; text-align:center;" role="listitem">
+            <div class="stat-number" aria-label="4 canchas">4</div>
+            <div style="font-size:10px; color:rgba(232,245,236,0.35); letter-spacing:0.08em; text-transform:uppercase; margin-top:2px;">Canchas</div>
+          </div>
+          <div style="background:var(--dark); padding:18px 14px; text-align:center; border-left:1px solid rgba(34,197,94,0.08); border-right:1px solid rgba(34,197,94,0.08);" role="listitem">
+            <div class="stat-number" aria-label="Abre 7 días a la semana">7°</div>
+            <div style="font-size:10px; color:rgba(232,245,236,0.35); letter-spacing:0.08em; text-transform:uppercase; margin-top:2px;">Días/semana</div>
+          </div>
+          <div style="background:var(--dark); padding:18px 14px; text-align:center;" role="listitem">
+            <div class="stat-number" aria-label="Calificación 4.4 estrellas">4.4</div>
+            <div class="stars" aria-hidden="true" style="font-size:11px; margin-top:1px;">★★★★☆</div>
+            <div style="font-size:10px; color:rgba(232,245,236,0.35); letter-spacing:0.06em; text-transform:uppercase; margin-top:1px;">Google Maps</div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-diagonal" aria-hidden="true"></div>
+    </section>
+
+    <!-- ===================== CANCHAS ===================== -->
+    <section id="canchas" class="section" style="background:var(--dark);" aria-labelledby="canchas-title">
+      <div class="container">
+        <header class="fade-up" style="margin-bottom:2.5rem;">
+          <p class="section-tag">Instalaciones</p>
+          <h2 id="canchas-title" class="bebas" style="font-size: clamp(36px, 7vw, 60px); color:#fff; line-height:1;">Nuestras canchas</h2>
+          <p style="font-size:14px; color:rgba(232,245,236,0.4); margin-top:6px; max-width:440px; font-weight:300;">Todas al aire libre con césped sintético de alta densidad e iluminación LED para nocturnos.</p>
+        </header>
+
+        <div style="display:grid; gap:1rem;" class="md:grid-cols-2">
+
+          <!-- Fútbol 5 -->
+          <article class="card p-6 fade-up" aria-label="Canchas de fútbol 5">
+            <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:16px; gap:12px;">
+              <div>
+                <h3 class="bebas" style="font-size:26px; color:#fff; line-height:1;">Fútbol 5</h3>
+                <p style="font-size:13px; color:rgba(232,245,236,0.4); margin-top:3px;">3 canchas · Al aire libre</p>
+              </div>
+              <span class="badge-open">Disponible</span>
+            </div>
+            <div class="divider"></div>
+            <ul style="list-style:none; display:flex; flex-direction:column; gap:10px; margin-bottom:24px;" role="list">
+              <li style="display:flex; gap:12px; align-items:center;">
+                <span class="amenity-icon" aria-hidden="true">🌿</span>
+                <span style="font-size:14px; color:rgba(232,245,236,0.62);">Césped sintético de alta densidad</span>
+              </li>
+              <li style="display:flex; gap:12px; align-items:center;">
+                <span class="amenity-icon" aria-hidden="true">💡</span>
+                <span style="font-size:14px; color:rgba(232,245,236,0.62);">Iluminación LED para partidos nocturnos</span>
+              </li>
+              <li style="display:flex; gap:12px; align-items:center;">
+                <span class="amenity-icon" aria-hidden="true">🌤</span>
+                <span style="font-size:14px; color:rgba(232,245,236,0.62);">Al aire libre — 3 canchas independientes</span>
+              </li>
+              <li style="display:flex; gap:12px; align-items:center;">
+                <span class="amenity-icon" aria-hidden="true">⚽</span>
+                <span style="font-size:14px; color:rgba(232,245,236,0.62);">Pelota incluida en la reserva</span>
+              </li>
+            </ul>
+            <div style="display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:12px;">
+              <div style="display:flex; gap:20px;">
+                <div>
+                  <p class="price-label">10 – 18 hs</p>
+                  <p class="price-tag">$35.000</p>
+                </div>
+                <div>
+                  <p class="price-label">18 – 00 hs</p>
+                  <p class="price-tag">$40.000</p>
+                </div>
+              </div>
+              <a href="https://wa.me/5491136969150?text=Hola!%20Quiero%20reservar%20una%20cancha%20de%20F%C3%BAtbol%205%20en%20El%20Port%C3%B3n%20F%C3%BAtbol" target="_blank" rel="noopener" class="btn-wa" style="font-size:13px; padding:11px 18px;">
+                <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                Reservar
+              </a>
+            </div>
+          </article>
+
+          <!-- Fútbol 8 -->
+          <article class="card p-6 fade-up" style="transition-delay:0.1s; border-color:rgba(34,197,94,0.18);" aria-label="Cancha de fútbol 8">
+            <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:16px; gap:12px;">
+              <div>
+                <h3 class="bebas" style="font-size:26px; color:#fff; line-height:1;">Fútbol 8</h3>
+                <p style="font-size:13px; color:rgba(232,245,236,0.4); margin-top:3px;">1 cancha grande · Al aire libre</p>
+              </div>
+              <span class="badge-open">Disponible</span>
+            </div>
+            <div class="divider"></div>
+            <ul style="list-style:none; display:flex; flex-direction:column; gap:10px; margin-bottom:24px;" role="list">
+              <li style="display:flex; gap:12px; align-items:center;">
+                <span class="amenity-icon" aria-hidden="true">🌿</span>
+                <span style="font-size:14px; color:rgba(232,245,236,0.62);">Césped sintético de alta densidad</span>
+              </li>
+              <li style="display:flex; gap:12px; align-items:center;">
+                <span class="amenity-icon" aria-hidden="true">💡</span>
+                <span style="font-size:14px; color:rgba(232,245,236,0.62);">Iluminación LED para partidos nocturnos</span>
+              </li>
+              <li style="display:flex; gap:12px; align-items:center;">
+                <span class="amenity-icon" aria-hidden="true">📐</span>
+                <span style="font-size:14px; color:rgba(232,245,236,0.62);">Equivale a las 3 canchas de fútbol 5 unidas</span>
+              </li>
+              <li style="display:flex; gap:12px; align-items:center;">
+                <span class="amenity-icon" aria-hidden="true">⚽</span>
+                <span style="font-size:14px; color:rgba(232,245,236,0.62);">Pelota incluida en la reserva</span>
+              </li>
+            </ul>
+            <div style="display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:12px;">
+              <div style="display:flex; gap:20px;">
+                <div>
+                  <p class="price-label">10 – 18 hs</p>
+                  <p class="price-tag">$72.000</p>
+                </div>
+                <div>
+                  <p class="price-label">18 – 00 hs</p>
+                  <p class="price-tag">$80.000</p>
+                </div>
+              </div>
+              <a href="https://wa.me/5491136969150?text=Hola!%20Quiero%20reservar%20la%20cancha%20de%20F%C3%BAtbol%208%20en%20El%20Port%C3%B3n%20F%C3%BAtbol" target="_blank" rel="noopener" class="btn-wa" style="font-size:13px; padding:11px 18px;">
+                <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                Reservar
+              </a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== PRECIOS ===================== -->
+    <section id="precios" class="section" style="background:var(--dark-2);" aria-labelledby="precios-title">
+      <div class="container">
+        <header class="fade-up" style="margin-bottom:2.5rem;">
+          <p class="section-tag">Tarifas</p>
+          <h2 id="precios-title" class="bebas" style="font-size: clamp(36px, 7vw, 60px); color:#fff; line-height:1;">Precios</h2>
+          <p style="font-size:14px; color:rgba(232,245,236,0.4); margin-top:6px; font-weight:300;">Reservas por hora. Los precios varían según el horario.</p>
+        </header>
+
+        <!-- Tabla de precios -->
+        <div style="overflow-x:auto; -webkit-overflow-scrolling:touch;" class="fade-up" role="region" aria-label="Tabla de precios">
+          <table style="width:100%; border-collapse:collapse; min-width:480px;" aria-label="Precios por cancha y horario">
+            <thead>
+              <tr style="border-bottom:1px solid rgba(34,197,94,0.15);">
+                <th style="text-align:left; padding:12px 16px; font-size:11px; letter-spacing:0.08em; text-transform:uppercase; color:rgba(232,245,236,0.35); font-weight:500;">Cancha</th>
+                <th style="text-align:center; padding:12px 16px; font-size:11px; letter-spacing:0.08em; text-transform:uppercase; color:rgba(232,245,236,0.35); font-weight:500;">10:00 – 18:00 hs</th>
+                <th style="text-align:center; padding:12px 16px; font-size:11px; letter-spacing:0.08em; text-transform:uppercase; color:rgba(232,245,236,0.35); font-weight:500;">18:00 – 00:00 hs</th>
+                <th style="text-align:center; padding:12px 16px; font-size:11px; letter-spacing:0.08em; text-transform:uppercase; color:rgba(232,245,236,0.35); font-weight:500;">Acción</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="border-bottom:1px solid rgba(34,197,94,0.06); background:var(--dark-card);">
+                <td style="padding:16px; font-size:14px; color:rgba(232,245,236,0.8);">
+                  <strong style="font-weight:500; display:block;">Fútbol 5</strong>
+                  <span style="font-size:12px; color:rgba(232,245,236,0.35);">3 canchas disponibles</span>
+                </td>
+                <td style="padding:16px; text-align:center;">
+                  <span class="price-tag" style="font-size:22px;">$35.000</span>
+                </td>
+                <td style="padding:16px; text-align:center;">
+                  <span class="price-tag" style="font-size:22px;">$40.000</span>
+                </td>
+                <td style="padding:16px; text-align:center;">
+                  <a href="https://wa.me/5491136969150?text=Hola!%20Quiero%20reservar%20F%C3%BAtbol%205" target="_blank" rel="noopener" class="btn-wa" style="font-size:12px; padding:8px 14px;">Reservar</a>
+                </td>
+              </tr>
+              <tr style="background:var(--dark-3);">
+                <td style="padding:16px; font-size:14px; color:rgba(232,245,236,0.8);">
+                  <strong style="font-weight:500; display:block;">Fútbol 8</strong>
+                  <span style="font-size:12px; color:rgba(232,245,236,0.35);">Cancha grande unificada</span>
+                </td>
+                <td style="padding:16px; text-align:center;">
+                  <span class="price-tag" style="font-size:22px;">$72.000</span>
+                </td>
+                <td style="padding:16px; text-align:center;">
+                  <span class="price-tag" style="font-size:22px;">$80.000</span>
+                </td>
+                <td style="padding:16px; text-align:center;">
+                  <a href="https://wa.me/5491136969150?text=Hola!%20Quiero%20reservar%20F%C3%BAtbol%208" target="_blank" rel="noopener" class="btn-wa" style="font-size:12px; padding:8px 14px;">Reservar</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p style="font-size:12px; color:rgba(232,245,236,0.25); margin-top:12px; font-weight:300;">* Precio por hora. Pelota incluida. Consultar disponibilidad antes de confirmar.</p>
+      </div>
+    </section>
+
+    <!-- ===================== PROMOCIÓN ESCOLAR ===================== -->
+    <section id="promocion" class="section" style="background:var(--dark);" aria-labelledby="promo-title">
+      <div class="container">
+        <header class="fade-up" style="margin-bottom:2.5rem;">
+          <p class="section-tag" style="color:#eab308;">Oferta especial</p>
+          <h2 id="promo-title" class="bebas" style="font-size: clamp(36px, 7vw, 60px); color:#fff; line-height:1;">Promoción<br><span style="color:#eab308;">Escolar</span></h2>
+        </header>
+
+        <div class="promo-banner p-6 fade-up" style="max-width:700px;" role="region" aria-label="Detalle de la promoción escolar">
+          <div style="display:flex; flex-wrap:wrap; align-items:center; gap:10px; margin-bottom:16px;">
+            <span class="badge-promo">🎓 Promo escolar</span>
+            <span style="font-size:13px; color:rgba(232,245,236,0.45);">Lunes a viernes · 10:00 – 15:00 hs</span>
+          </div>
+          <p style="font-size:15px; color:rgba(232,245,236,0.7); line-height:1.75; margin-bottom:24px; font-weight:300;">
+            Precios especiales para grupos escolares y salidas educativas de lunes a viernes en el horario de 10 a 15 horas. Ideal para escuelas, colegios y clubes de la zona.
+          </p>
+
+          <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(200px,1fr)); gap:1px; background:rgba(234,179,8,0.1); border:1px solid rgba(234,179,8,0.15); border-radius:3px; overflow:hidden; margin-bottom:24px;" role="list" aria-label="Precios de la promoción escolar">
+            <div style="background:var(--dark-card); padding:20px; text-align:center;" role="listitem">
+              <p style="font-size:11px; color:rgba(232,245,236,0.35); letter-spacing:0.07em; text-transform:uppercase; margin-bottom:6px;">Fútbol 5 — promo</p>
+              <p style="font-family:'Bebas Neue',sans-serif; font-size:36px; color:#eab308; line-height:1; letter-spacing:0.04em;">$30.000</p>
+              <p style="font-size:11px; color:rgba(232,245,236,0.3); margin-top:4px;">por hora</p>
+            </div>
+            <div style="background:var(--dark-card); padding:20px; text-align:center; border-left:1px solid rgba(234,179,8,0.1);" role="listitem">
+              <p style="font-size:11px; color:rgba(232,245,236,0.35); letter-spacing:0.07em; text-transform:uppercase; margin-bottom:6px;">Fútbol 8 — promo</p>
+              <p style="font-family:'Bebas Neue',sans-serif; font-size:36px; color:#eab308; line-height:1; letter-spacing:0.04em;">$65.000</p>
+              <p style="font-size:11px; color:rgba(232,245,236,0.3); margin-top:4px;">por hora</p>
+            </div>
+          </div>
+
+          <a href="https://wa.me/5491136969150?text=Hola!%20Quiero%20consultar%20la%20Promoci%C3%B3n%20Escolar%20en%20El%20Port%C3%B3n%20F%C3%BAtbol" target="_blank" rel="noopener" class="btn-wa" style="background:#eab308; color:#1a0e00;">
+            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            Consultar promo escolar
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== AVISO REGLAMENTO ===================== -->
+    <section aria-label="Reglamento del complejo" style="background:var(--dark); padding-bottom:5rem;">
+      <div class="container">
+        <div class="warning-banner p-5 fade-up" style="max-width:700px;" role="alert">
+          <div style="display:flex; flex-wrap:wrap; gap:10px; align-items:center; margin-bottom:12px;">
+            <span class="badge-warning">⚠️ Reglamento</span>
+          </div>
+          <ul style="list-style:none; display:flex; flex-direction:column; gap:8px;" role="list">
+            <li style="display:flex; gap:10px; align-items:flex-start; font-size:14px; color:rgba(232,245,236,0.65);">
+              <span style="color:#fca5a5; font-size:16px; line-height:1.4;" aria-hidden="true">🚫</span>
+              <span><strong style="color:rgba(232,245,236,0.85); font-weight:500;">Prohibido el ingreso de bebidas alcohólicas</strong> al complejo en cualquier modalidad.</span>
+            </li>
+            <li style="display:flex; gap:10px; align-items:flex-start; font-size:14px; color:rgba(232,245,236,0.65);">
+              <span style="color:#fca5a5; font-size:16px; line-height:1.4;" aria-hidden="true">🚫</span>
+              <span><strong style="color:rgba(232,245,236,0.85); font-weight:500;">Prohibido el ingreso de animales</strong> a las instalaciones del complejo.</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== HORARIOS ===================== -->
+    <section id="horarios" class="section" style="background:var(--dark-2);" aria-labelledby="horarios-title">
+      <div class="container">
+        <header class="fade-up" style="margin-bottom:2.5rem;">
+          <p class="section-tag">Disponibilidad</p>
+          <h2 id="horarios-title" class="bebas" style="font-size: clamp(36px, 7vw, 60px); color:#fff; line-height:1;">Horarios</h2>
+        </header>
+
+        <div style="display:grid; gap:1rem; grid-template-columns: repeat(auto-fit, minmax(280px,1fr));">
+
+          <!-- Tabla horarios -->
+          <div class="card overflow-hidden fade-up" aria-label="Horarios de apertura">
+            <div style="padding:14px 20px; border-bottom:1px solid rgba(34,197,94,0.1);">
+              <h3 class="bebas" style="font-size:18px; color:#fff; letter-spacing:0.04em;">Días y horarios</h3>
+            </div>
+            <div role="list">
+              <div class="sched-row" role="listitem">
+                <span style="color:rgba(232,245,236,0.7);">Lunes a viernes</span>
+                <span class="sched-time">10:00 — 00:00 hs</span>
+              </div>
+              <div class="sched-row" role="listitem">
+                <span style="color:rgba(232,245,236,0.7);">Sábados</span>
+                <span class="sched-time">10:00 — 22:00 hs</span>
+              </div>
+              <div class="sched-row" role="listitem">
+                <span style="color:rgba(232,245,236,0.7);">Domingos</span>
+                <span class="sched-time">10:00 — 22:00 hs</span>
+              </div>
+              <div class="sched-row" role="listitem">
+                <span style="color:rgba(232,245,236,0.7);">Feriados</span>
+                <span style="font-size:13px; color:rgba(232,245,236,0.35);">Consultar</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Cómo reservar -->
+          <div class="card p-6 fade-up" style="transition-delay:0.1s;" aria-label="Pasos para reservar">
+            <h3 class="bebas" style="font-size:18px; color:#fff; letter-spacing:0.04em; margin-bottom:16px;">¿Cómo reservar?</h3>
+            <div class="divider"></div>
+            <ol style="list-style:none; display:flex; flex-direction:column; gap:14px; margin-bottom:24px;" role="list">
+              <li style="display:flex; gap:12px; align-items:flex-start;">
+                <span class="step-dot" aria-hidden="true">1</span>
+                <p style="font-size:14px; color:rgba(232,245,236,0.55); line-height:1.65;">Escribinos por WhatsApp indicando el día, horario y cancha que querés.</p>
+              </li>
+              <li style="display:flex; gap:12px; align-items:flex-start;">
+                <span class="step-dot" aria-hidden="true">2</span>
+                <p style="font-size:14px; color:rgba(232,245,236,0.55); line-height:1.65;">Te confirmamos disponibilidad y te damos los datos de pago para la seña.</p>
+              </li>
+              <li style="display:flex; gap:12px; align-items:flex-start;">
+                <span class="step-dot" aria-hidden="true">3</span>
+                <p style="font-size:14px; color:rgba(232,245,236,0.55); line-height:1.65;">¡Turno confirmado! Solo presentate en el complejo a la hora acordada.</p>
+              </li>
+            </ol>
+            <a href="https://wa.me/5491136969150?text=Hola!%20Quiero%20consultar%20disponibilidad%20en%20El%20Port%C3%B3n%20F%C3%BAtbol" target="_blank" rel="noopener" class="btn-wa" style="width:100%; justify-content:center;">
+              <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              Consultar disponibilidad
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== SERVICIOS ===================== -->
+    <section id="servicios" class="section" style="background:var(--dark);" aria-labelledby="servicios-title">
+      <div class="container">
+        <header class="fade-up" style="margin-bottom:2.5rem;">
+          <p class="section-tag">Lo que ofrecemos</p>
+          <h2 id="servicios-title" class="bebas" style="font-size: clamp(36px, 7vw, 60px); color:#fff; line-height:1;">Servicios</h2>
+        </header>
+
+        <ul style="list-style:none; display:grid; grid-template-columns:repeat(auto-fill, minmax(150px,1fr)); gap:12px;" role="list" aria-label="Servicios incluidos">
+          <li class="card p-5 text-center fade-up" style="transition-delay:0s;" role="listitem">
+            <div style="font-size:26px; margin-bottom:8px;" aria-hidden="true">🚿</div>
+            <p style="font-size:13px; font-weight:500; color:rgba(232,245,236,0.78);">Vestuarios y duchas</p>
+          </li>
+          <li class="card p-5 text-center fade-up" style="transition-delay:0.05s;" role="listitem">
+            <div style="font-size:26px; margin-bottom:8px;" aria-hidden="true">⚽</div>
+            <p style="font-size:13px; font-weight:500; color:rgba(232,245,236,0.78);">Pelotas propias</p>
+          </li>
+          <li class="card p-5 text-center fade-up" style="transition-delay:0.1s;" role="listitem">
+            <div style="font-size:26px; margin-bottom:8px;" aria-hidden="true">🥤</div>
+            <p style="font-size:13px; font-weight:500; color:rgba(232,245,236,0.78);">Buffet analcohólico</p>
+          </li>
+          <li class="card p-5 text-center fade-up" style="transition-delay:0.15s;" role="listitem">
+            <div style="font-size:26px; margin-bottom:8px;" aria-hidden="true">👧</div>
+            <p style="font-size:13px; font-weight:500; color:rgba(232,245,236,0.78);">Escuelas infantiles de fútbol</p>
+          </li>
+          <li class="card p-5 text-center fade-up" style="transition-delay:0.2s;" role="listitem">
+            <div style="font-size:26px; margin-bottom:8px;" aria-hidden="true">💵</div>
+            <p style="font-size:13px; font-weight:500; color:rgba(232,245,236,0.78);">Efectivo</p>
+          </li>
+          <li class="card p-5 text-center fade-up" style="transition-delay:0.25s;" role="listitem">
+            <div style="font-size:26px; margin-bottom:8px;" aria-hidden="true">📲</div>
+            <p style="font-size:13px; font-weight:500; color:rgba(232,245,236,0.78);">Transferencia bancaria</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===================== CTA BANNER ===================== -->
+    <section class="section" style="background:var(--dark-2);" aria-label="Llamada a la acción — reservar">
+      <div class="container">
+        <div class="card p-8 md:p-12 text-center fade-up" style="background:var(--dark-3); position:relative; overflow:hidden; box-shadow:0 0 80px rgba(34,197,94,0.08);">
+          <div style="position:absolute; top:-70px; right:-70px; width:220px; height:220px; border:1px solid rgba(34,197,94,0.05); border-radius:50%;" aria-hidden="true"></div>
+          <div style="position:absolute; bottom:-50px; left:-50px; width:160px; height:160px; border:1px solid rgba(34,197,94,0.04); border-radius:50%;" aria-hidden="true"></div>
+          <p class="section-tag" style="justify-content:center;">Reservas</p>
+          <h2 class="bebas" style="font-size: clamp(30px, 7vw, 58px); color:#fff; line-height:1; margin-bottom:12px;">
+            ¿Listo para jugar?<br><span style="color:var(--green);">Escribinos ahora</span>
+          </h2>
+          <p style="font-size:15px; color:rgba(232,245,236,0.4); max-width:360px; margin:0 auto 28px; font-weight:300; line-height:1.75;">
+            Respondemos en minutos. Confirmá tu turno antes de que se ocupe.
+          </p>
+          <a href="https://wa.me/5491136969150?text=Hola!%20Quiero%20reservar%20en%20El%20Port%C3%B3n%20F%C3%BAtbol" target="_blank" rel="noopener" class="btn-wa" style="font-size:16px; padding:16px 36px;">
+            <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            Reservar por WhatsApp
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== UBICACION ===================== -->
+    <section id="ubicacion" class="section" style="background:var(--dark);" aria-labelledby="ubicacion-title">
+      <div class="container">
+        <header class="fade-up" style="margin-bottom:2.5rem;">
+          <p class="section-tag">Dónde estamos</p>
+          <h2 id="ubicacion-title" class="bebas" style="font-size: clamp(36px, 7vw, 60px); color:#fff; line-height:1;">Ubicación</h2>
+        </header>
+
+        <div style="display:grid; gap:16px; grid-template-columns: repeat(auto-fit, minmax(280px,1fr));">
+
+          <address style="font-style:normal; display:flex; flex-direction:column; gap:12px;" class="fade-up">
+            <div class="card p-5" style="display:flex; gap:14px; align-items:center;">
+              <span class="amenity-icon" aria-hidden="true" style="font-size:18px;">📍</span>
+              <div>
+                <p style="font-size:10px; color:rgba(232,245,236,0.3); letter-spacing:0.08em; text-transform:uppercase; margin-bottom:3px;">Dirección</p>
+                <p style="font-size:14px; color:rgba(232,245,236,0.82);">Av. Balbín 950, San Miguel<br>Buenos Aires, Argentina</p>
+              </div>
+            </div>
+            <div class="card p-5" style="display:flex; gap:14px; align-items:center;">
+              <span class="amenity-icon" aria-hidden="true" style="font-size:18px;">📱</span>
+              <div>
+                <p style="font-size:10px; color:rgba(232,245,236,0.3); letter-spacing:0.08em; text-transform:uppercase; margin-bottom:3px;">WhatsApp</p>
+                <a href="https://wa.me/5491136969150" target="_blank" rel="noopener" style="font-size:14px; color:var(--green); text-decoration:none; font-weight:500;">+54 9 11 3696-9150</a>
+              </div>
+            </div>
+            <div class="card p-5" style="display:flex; gap:14px; align-items:center;">
+              <span class="amenity-icon" aria-hidden="true" style="font-size:18px;">⭐</span>
+              <div>
+                <p style="font-size:10px; color:rgba(232,245,236,0.3); letter-spacing:0.08em; text-transform:uppercase; margin-bottom:3px;">Google Maps</p>
+                <p style="font-size:14px; color:rgba(232,245,236,0.82); display:flex; align-items:center; gap:8px;">
+                  <span class="stars" style="font-size:13px;" aria-label="4.4 estrellas">★★★★☆</span>
+                  <strong style="font-weight:500;">4.4</strong>
+                  <span style="font-size:12px; color:rgba(232,245,236,0.35);">valoración</span>
+                </p>
+              </div>
+            </div>
+          </address>
+
+          <!-- Map placeholder -->
+          <div class="map-ph fade-up" style="transition-delay:0.1s;" role="region" aria-label="Mapa de ubicación">
+            <span style="font-size:34px;" aria-hidden="true">📍</span>
+            <p style="font-size:13px; color:rgba(232,245,236,0.3); max-width:200px; line-height:1.65; text-align:center;">
+              Av. Balbín 950, San Miguel, Buenos Aires
+            </p>
+            <a href="https://www.google.com/maps/search/Av.+Balb%C3%ADn+950+San+Miguel+Buenos+Aires" target="_blank" rel="noopener" style="font-size:12px; color:var(--green); text-decoration:none; border:1px solid rgba(34,197,94,0.2); padding:7px 16px; border-radius:3px; transition:background 0.15s;">
+              Ver en Google Maps →
+            </a>
+            <p style="font-size:11px; color:rgba(232,245,236,0.2);">Reemplazá por embed de Google Maps</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer style="background:var(--dark-2); border-top:1px solid rgba(34,197,94,0.07); padding:2rem 1rem;" role="contentinfo">
+    <div class="container" style="display:flex; flex-direction:column; align-items:center; gap:12px; text-align:center;">
+      <p style="font-family:'Bebas Neue',sans-serif; font-size:18px; color:#fff; letter-spacing:0.06em;">El Portón Fútbol</p>
+      <p style="font-size:12px; color:rgba(232,245,236,0.25);">Av. Balbín 950, San Miguel, Buenos Aires · Reservas únicamente por WhatsApp</p>
+      <p style="font-size:12px; color:rgba(232,245,236,0.18);">🚫 Prohibido el ingreso de bebidas alcohólicas y animales</p>
+      <a href="https://wa.me/5491136969150?text=Hola!%20Quiero%20reservar%20en%20El%20Port%C3%B3n%20F%C3%BAtbol" target="_blank" rel="noopener" style="font-size:12px; color:var(--green); text-decoration:none; display:inline-flex; align-items:center; gap:6px; margin-top:4px;">
+        <svg width="13" height="13" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        +54 9 11 3696-9150
+      </a>
+    </div>
+  </footer>
+
+  <!-- Floating WA (mobile) -->
+  <a href="https://wa.me/5491136969150?text=Hola!%20Quiero%20reservar%20en%20El%20Port%C3%B3n%20F%C3%BAtbol" target="_blank" rel="noopener" class="floating-wa" aria-label="Reservar por WhatsApp">
+    <svg width="26" height="26" fill="white" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+
+<script src="script.js"></script>
+</body>
+</html>
