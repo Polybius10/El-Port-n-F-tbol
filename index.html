@@ -7,6 +7,8 @@
   <title>El Portón Fútbol</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="shortcut icon" href="public/favicon/football.png" type="image/x-icon">
+  <link rel="stylesheet" href="input.css">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css">
@@ -18,7 +20,7 @@
     <div class="nav-inner">
       <a href="#inicio" class="nav-logo" aria-label="El Portón Fútbol — inicio">
         <span class="nav-logo-text">El Portón Fútbol</span>
-        <span class="badge-open" aria-label="Complejo abierto">Abierto</span>
+        <!-- <span class="badge-open" aria-label="Complejo abierto" id="badgeOpen">Abierto</span> -->
       </a>
       <ul class="nav-links" role="list">
         <li><a href="#canchas">Canchas</a></li>
@@ -84,7 +86,7 @@
         <!-- Stats strip -->
         <div class="fade-up" style="display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:rgba(34,197,94,0.08); border:1px solid rgba(34,197,94,0.1); border-radius:4px; overflow:hidden; margin-top:60px; max-width:600px; transition-delay:0.32s;" role="list" aria-label="Datos del complejo">
           <div style="background:var(--dark); padding:18px 14px; text-align:center;" role="listitem">
-            <div class="stat-number" aria-label="4 canchas">4</div>
+            <div class="stat-number" aria-label="3 canchas">3</div>
             <div style="font-size:10px; color:rgba(232,245,236,0.35); letter-spacing:0.08em; text-transform:uppercase; margin-top:2px;">Canchas</div>
           </div>
           <div style="background:var(--dark); padding:18px 14px; text-align:center; border-left:1px solid rgba(34,197,94,0.08); border-right:1px solid rgba(34,197,94,0.08);" role="listitem">
@@ -466,10 +468,17 @@
               </div>
             </div>
             <div class="card p-5" style="display:flex; gap:14px; align-items:center;">
-              <span class="amenity-icon" aria-hidden="true" style="font-size:18px;">📱</span>
+              <span class="amenity-icon" aria-hidden="true" style="font-size:18px;"><img src="./public/icons/whatsapp.png" alt="instagram" style="padding: 2px; border: none;"></span>
               <div>
                 <p style="font-size:10px; color:rgba(232,245,236,0.3); letter-spacing:0.08em; text-transform:uppercase; margin-bottom:3px;">WhatsApp</p>
                 <a href="https://wa.me/5491136969150" target="_blank" rel="noopener" style="font-size:14px; color:var(--green); text-decoration:none; font-weight:500;">+54 9 11 3696-9150</a>
+              </div>
+            </div>
+            <div class="card p-5" style="display:flex; gap:14px; align-items:center;">
+              <span class="amenity-icon" aria-hidden="true" style="font-size:18px;"><img src="./public/icons/instagram.png" alt="instagram" style="padding: 2px; border: none;"></span>
+              <div>
+                <p style="font-size:10px; color:rgba(232,245,236,0.3); letter-spacing:0.08em; text-transform:uppercase; margin-bottom:3px;">Instagram</p>
+                <a href="https://instagram.com/elportonfutboll" target="_blank" rel="noopener" style="font-size:14px; color:var(--green); text-decoration:none; font-weight:500;">@elportonfutboll</a>
               </div>
             </div>
             <div class="card p-5" style="display:flex; gap:14px; align-items:center;">
@@ -487,14 +496,14 @@
 
           <!-- Map placeholder -->
           <div class="map-ph fade-up" style="transition-delay:0.1s;" role="region" aria-label="Mapa de ubicación">
-            <span style="font-size:34px;" aria-hidden="true">📍</span>
+            <span style="font-size:20px;" aria-hidden="true">📍</span>
             <p style="font-size:13px; color:rgba(232,245,236,0.3); max-width:200px; line-height:1.65; text-align:center;">
               Av. Balbín 950, San Miguel, Buenos Aires
             </p>
             <a href="https://www.google.com/maps/search/Av.+Balb%C3%ADn+950+San+Miguel+Buenos+Aires" target="_blank" rel="noopener" style="font-size:12px; color:var(--green); text-decoration:none; border:1px solid rgba(34,197,94,0.2); padding:7px 16px; border-radius:3px; transition:background 0.15s;">
               Ver en Google Maps →
             </a>
-            <p style="font-size:11px; color:rgba(232,245,236,0.2);">Reemplazá por embed de Google Maps</p>
+            <iframe id="map-canvas" class="map_part" width="100%"  height="100%"  frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%&amp;height=100%&amp;hl=en&amp;q=B1663NCJ, Av. Dr. Ricardo Balbín 950, B1663NCW San Miguel, Provincia de Buenos Aires&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed">Powered by <a href="https://embedgooglemaps.com">how to embed google maps generator</a> and <a href="https://casinomga.se/">mga casino</a></iframe>
           </div>
         </div>
       </div>

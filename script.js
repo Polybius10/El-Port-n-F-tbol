@@ -1,9 +1,16 @@
+    // const badgeOpen = document.getElementById('badgeOpen');
+
+    //toggle menu
     function toggleMenu() {
       const m = document.getElementById('mobile-menu');
       const b = document.getElementById('burger');
       const open = m.classList.toggle('open');
       b.setAttribute('aria-expanded', open);
     }
+
+    //cartel de abierto
+ 
+
 
     // Scroll reveal
     const io = new IntersectionObserver((entries) => {
